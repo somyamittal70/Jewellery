@@ -2,7 +2,7 @@ import useInView from "../hooks/useInView";
 import { SectionTitle } from "../components/UI";
 
 // Images
-import ringImg from "../../public/img1.jpg";
+import ringImg from "../../public/img7.jpg";
 import necklaceImg from "../../public/img2.jpg";
 import earringsImg from "../../public/img3.jpg";
 import banglesImg from "../../public/img4.jpg";
