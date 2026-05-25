@@ -2,17 +2,36 @@ import { useState } from "react";
 import useInView from "../hooks/useInView";
 import { SectionTitle } from "../components/UI";
 
+import {
+  MapPin,
+  Phone,
+  Mail,
+} from "lucide-react";
+
 const CONTACT_INFO = [
   {
-    icon: "📍",
+    icon: MapPin,
     label: "Address",
     val: "Second Floor, 14/252, Block-14, Trilokpuri Near Aman Band, East Delhi, Delhi, 110091",
   },
-  { icon: "📞", label: "Phone", val: "+91 98716 55831" },
-  { icon: "✉️", label: "Email", val: "sakkmr183.sk@gmail.com" },
+  {
+    icon: Phone,
+    label: "Phone",
+    val: "+91 98716 55831",
+  },
+  {
+    icon: Mail,
+    label: "Email",
+    val: "sakkmr183.sk@gmail.com",
+  },
 ];
 
-const EMPTY_FORM = { name: "", email: "", phone: "", message: "" };
+const EMPTY_FORM = {
+  name: "",
+  email: "",
+  phone: "",
+  message: "",
+};
 
 function Contact() {
   const [ref, inView] = useInView();
@@ -20,13 +39,20 @@ function Contact() {
   const [submitted, setSubmitted] = useState(false);
 
   const update = (field) => (e) =>
-    setForm((prev) => ({ ...prev, [field]: e.target.value }));
+    setForm((prev) => ({
+      ...prev,
+      [field]: e.target.value,
+    }));
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     setSubmitted(true);
     setForm(EMPTY_FORM);
-    setTimeout(() => setSubmitted(false), 4000);
+
+    setTimeout(() => {
+      setSubmitted(false);
+    }, 4000);
   };
 
   return (
@@ -34,11 +60,13 @@ function Contact() {
       id="contact"
       style={{
         padding: "clamp(60px, 10vw, 120px) 5%",
-        background: "linear-gradient(135deg, #0A1628 0%, #050D1A 100%)",
+        background:
+          "linear-gradient(135deg, #0A1628 0%, #050D1A 100%)",
         position: "relative",
+        overflow: "hidden",
       }}
     >
-      {/* Background decorative diamonds */}
+      {/* Decorative Background */}
       <div
         style={{
           position: "absolute",
@@ -65,22 +93,34 @@ function Contact() {
       </div>
 
       <div
-        style={{ maxWidth: "1100px", margin: "0 auto", position: "relative" }}
+        style={{
+          maxWidth: "1100px",
+          margin: "0 auto",
+          position: "relative",
+        }}
       >
         {/* Heading */}
-        <div ref={ref} className={`scroll-reveal${inView ? " visible" : ""}`}>
-          <SectionTitle title="Get In Touch" subtitle="Contact Us" light />
+        <div
+          ref={ref}
+          className={`scroll-reveal${inView ? " visible" : ""}`}
+        >
+          <SectionTitle
+            title="Get In Touch"
+            subtitle="Contact Us"
+            light
+          />
         </div>
 
         <div
           className={`scroll-reveal${inView ? " visible" : ""}`}
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            gridTemplateColumns:
+              "repeat(auto-fit, minmax(280px, 1fr))",
             gap: "clamp(32px, 6vw, 60px)",
           }}
         >
-          {/* ── Left: info ── */}
+          {/* LEFT SIDE */}
           <div>
             <h3
               style={{
@@ -101,25 +141,50 @@ function Contact() {
                 fontSize: "clamp(14px, 2vw, 16px)",
               }}
             >
-              Come to our Showroom and Buy your Dream Jewellery. Free
-              consultation available here.
+              Come to our showroom and discover your dream jewellery
+              collection. Free consultation available here.
             </p>
 
+            {/* CONTACT INFO */}
             <div
-              style={{ display: "flex", flexDirection: "column", gap: "20px" }}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "22px",
+              }}
             >
-              {CONTACT_INFO.map(({ icon, label, val }) => (
+              {CONTACT_INFO.map(({ icon: Icon, label, val }) => (
                 <div
                   key={label}
                   style={{
                     display: "flex",
-                    gap: "14px",
+                    gap: "16px",
                     alignItems: "flex-start",
                   }}
                 >
-                  <div style={{ fontSize: "22px", minWidth: "28px" }}>
-                    {icon}
+                  {/* Lucide Icon */}
+                  <div
+                    style={{
+                      minWidth: "48px",
+                      width: "48px",
+                      height: "48px",
+                      borderRadius: "50%",
+                      background: "rgba(201,168,76,0.08)",
+                      border:
+                        "1px solid rgba(201,168,76,0.18)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0,
+                    }}
+                  >
+                    <Icon
+                      size={20}
+                      color="#C9A84C"
+                      strokeWidth={1.8}
+                    />
                   </div>
+
                   <div>
                     <div
                       style={{
@@ -127,17 +192,18 @@ function Contact() {
                         letterSpacing: "2px",
                         color: "#C9A84C",
                         textTransform: "uppercase",
-                        marginBottom: "4px",
+                        marginBottom: "5px",
                       }}
                     >
                       {label}
                     </div>
+
                     <div
                       style={{
                         color: "rgba(253,250,244,0.75)",
                         fontSize: "clamp(13px, 2vw, 15px)",
                         wordBreak: "break-word",
-                        lineHeight: 1.6,
+                        lineHeight: 1.7,
                       }}
                     >
                       {val}
@@ -148,13 +214,14 @@ function Contact() {
             </div>
           </div>
 
-          {/* ── Right: form ── */}
+          {/* RIGHT SIDE FORM */}
           <div
             style={{
               background: "rgba(255,255,255,0.03)",
               border: "1px solid rgba(201,168,76,0.15)",
-              borderRadius: "4px",
+              borderRadius: "8px",
               padding: "clamp(20px, 5vw, 44px)",
+              backdropFilter: "blur(10px)",
             }}
           >
             {submitted ? (
@@ -165,7 +232,15 @@ function Contact() {
                   animation: "scale-in 0.4s ease",
                 }}
               >
-                <div style={{ fontSize: "56px", marginBottom: "20px" }}>✨</div>
+                <div
+                  style={{
+                    fontSize: "56px",
+                    marginBottom: "20px",
+                  }}
+                >
+                  ✨
+                </div>
+
                 <h3
                   style={{
                     fontFamily: "'Playfair Display', serif",
@@ -174,10 +249,16 @@ function Contact() {
                     marginBottom: "12px",
                   }}
                 >
-                  Thank you!
+                  Thank You!
                 </h3>
-                <p style={{ color: "rgba(253,250,244,0.6)", lineHeight: 1.7 }}>
-                  Message Sent! We will contact you as soon as possible.
+
+                <p
+                  style={{
+                    color: "rgba(253,250,244,0.6)",
+                    lineHeight: 1.7,
+                  }}
+                >
+                  Message sent successfully! We’ll contact you soon.
                 </p>
               </div>
             ) : (
@@ -189,32 +270,43 @@ function Contact() {
                   gap: "20px",
                 }}
               >
+                {/* Name + Phone */}
                 <div
                   style={{
                     display: "grid",
-                    gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+                    gridTemplateColumns:
+                      "repeat(auto-fit, minmax(160px, 1fr))",
                     gap: "16px",
                   }}
                 >
                   <div>
                     <label style={labelStyle}>Name</label>
+
                     <input
                       className="input-field"
                       required
                       placeholder="John Deo"
                       value={formData.name}
                       onChange={update("name")}
-                      style={{ padding: "12px 16px", width: "100%" }}
+                      style={{
+                        padding: "12px 16px",
+                        width: "100%",
+                      }}
                     />
                   </div>
+
                   <div>
                     <label style={labelStyle}>Phone</label>
+
                     <input
                       className="input-field"
                       placeholder="+91 xxxxx xxxxx"
                       value={formData.phone}
                       onChange={update("phone")}
-                      style={{ padding: "12px 16px", width: "100%" }}
+                      style={{
+                        padding: "12px 16px",
+                        width: "100%",
+                      }}
                     />
                   </div>
                 </div>
@@ -222,20 +314,25 @@ function Contact() {
                 {/* Email */}
                 <div>
                   <label style={labelStyle}>Email</label>
+
                   <input
                     className="input-field"
                     type="email"
                     required
-                    placeholder="aap@example.com"
+                    placeholder="you@example.com"
                     value={formData.email}
                     onChange={update("email")}
-                    style={{ padding: "12px 16px", width: "100%" }}
+                    style={{
+                      padding: "12px 16px",
+                      width: "100%",
+                    }}
                   />
                 </div>
 
                 {/* Message */}
                 <div>
                   <label style={labelStyle}>Message</label>
+
                   <textarea
                     className="input-field"
                     required
@@ -250,13 +347,14 @@ function Contact() {
                   />
                 </div>
 
+                {/* Button */}
                 <button
                   className="btn-gold"
                   type="submit"
                   style={{
                     padding: "16px",
                     fontSize: "13px",
-                    borderRadius: "2px",
+                    borderRadius: "6px",
                     width: "100%",
                   }}
                 >

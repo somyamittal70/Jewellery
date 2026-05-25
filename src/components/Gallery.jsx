@@ -1,56 +1,48 @@
 import useInView from "../hooks/useInView";
 import { SectionTitle } from "../components/UI";
 
-// Images
-import ringImg from "../../public/img7.jpg";
-import necklaceImg from "../../public/img2.jpg";
-import earringsImg from "../../public/img3.jpg";
-import banglesImg from "../../public/img4.jpg";
-import bridalImg from "../../public/img5.jpg";
-import pendantImg from "../../public/img6.jpg";
-
 const GALLERY_ITEMS = [
   {
     id: 1,
     category: "Rings",
     name: "Royal Diamond Ring",
     desc: "Elegant handcrafted diamond ring for timeless beauty.",
-    img: ringImg,
+    img: "./img7.jpg",
   },
   {
     id: 2,
     category: "Necklace",
     name: "Luxury Necklace Set",
     desc: "Premium necklace crafted with exquisite detailing.",
-    img: necklaceImg,
+    img: "./img2.jpg",
   },
   {
     id: 3,
     category: "Earrings",
     name: "Golden Earrings",
     desc: "Classic earrings designed for modern elegance.",
-    img: earringsImg,
+    img: "./img3.jpg",
   },
   {
     id: 4,
     category: "Bangles",
     name: "Traditional Bangles",
     desc: "Beautiful gold bangles inspired by royal heritage.",
-    img: banglesImg,
+    img: "./img4.jpg",
   },
   {
     id: 5,
     category: "Bridal",
     name: "Bridal Collection",
     desc: "Exclusive bridal jewellery collection for weddings.",
-    img: bridalImg,
+    img: "./img5.jpg",
   },
   {
     id: 6,
     category: "Pendant",
     name: "Diamond Pendant",
     desc: "Minimal and luxurious pendant for everyday wear.",
-    img: pendantImg,
+    img: "./img6.jpg",
   },
 ];
 

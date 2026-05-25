@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Gem, Diamond, Sparkles, CircleEllipsis } from "lucide-react";
-import hero from "../../public/img1.jpg";
 
 const FLOATING_CARDS = [
   { icon: Diamond, label: "Rings", top: "6%", left: "0%", delay: "0s" },
@@ -53,32 +52,6 @@ function Hero({ onScrollTo }) {
         boxSizing: "border-box",
       }}
     >
-      {/* Background rotating diamonds */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          opacity: 0.04,
-          pointerEvents: "none",
-          overflow: "hidden",
-        }}
-      >
-        {Array.from({ length: 8 }).map((_, i) => (
-          <div
-            key={i}
-            style={{
-              position: "absolute",
-              top: `${10 + i * 12}%`,
-              left: `${5 + i * 13}%`,
-              width: isMobile ? "30px" : "60px",
-              height: isMobile ? "30px" : "60px",
-              border: "1px solid #C9A84C",
-              transform: "rotate(45deg)",
-              animation: `spin-slow ${8 + i * 2}s linear infinite`,
-            }}
-          />
-        ))}
-      </div>
 
       {/* Radial glow */}
       <div
@@ -98,7 +71,7 @@ function Hero({ onScrollTo }) {
       {/* Main grid */}
       <div
         style={{
-          maxWidth: "1200px",
+          maxWidth: "1300px",
           margin: "0 auto",
           padding: isMobile ? "0 20px" : "100px 5% 0",
           display: "grid",
@@ -309,7 +282,7 @@ function Hero({ onScrollTo }) {
               }}
             >
               <img
-                src={hero}
+                src="./img1.jpg"
                 alt="Jewellery"
                 style={{
                   width: isMobile ? "150px" : "240px",
