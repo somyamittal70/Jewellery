@@ -36,7 +36,7 @@ export const TESTIMONIALS = [
     city: "Meerut",
     text: "We’ve trusted them for years, and they never disappoint. Their jewellery collection is elegant, high-quality, and perfect for every special occasion.",
     rating: 5,
-    avatar: "SA",
+    avatar: "KS",
   },
 ];
 

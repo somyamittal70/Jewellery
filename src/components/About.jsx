@@ -1,12 +1,7 @@
 import { useInView } from "react-intersection-observer";
 import { SectionTitle } from "../components/UI.jsx";
-import {
-  ShieldCheck,
-  PenTool,
-  Truck,
-  RotateCcw,
-  Sparkles,
-} from "lucide-react";
+import { ShieldCheck, PenTool, Truck, RotateCcw, Sparkles } from "lucide-react";
+import img8 from "../../public/img8.jpg";
 
 const FEATURES = [
   "BIS Certified Hallmarked Gold & Silver",
@@ -77,142 +72,24 @@ function About({ onScrollTo }) {
                   borderRadius: "10px",
                   position: "relative",
                   overflow: "hidden",
-                  padding: "clamp(24px, 5vw, 40px)",
+                  padding: "20px",
                   display: "flex",
-                  flexDirection: "column",
+                  alignItems: "center",
                   justifyContent: "center",
                 }}
               >
-                {/* Glow */}
-                <div
+                {/* IMAGE */}
+                <img
+                  src="/img8.jpg"
+                  alt="Jewellery"
                   style={{
-                    position: "absolute",
-                    top: "-100px",
-                    right: "-100px",
-                    width: "220px",
-                    height: "220px",
-                    background: "rgba(201,168,76,0.08)",
-                    borderRadius: "50%",
-                    filter: "blur(60px)",
+                    width: "100%",
+                    height: "100%",
+                    maxHeight: "580px",
+                    objectFit: "cover",
+                    borderRadius: "10px",
                   }}
                 />
-
-                <div
-                  style={{
-                    position: "relative",
-                    zIndex: 2,
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    textAlign: "center",
-                  }}
-                >
-                  {/* Icon */}
-                  <div
-                    style={{
-                      marginBottom: "22px",
-                    }}
-                  >
-                    <Sparkles
-                      size={window.innerWidth <= 768 ? 52 : 70}
-                      color="#C9A84C"
-                      strokeWidth={1.5}
-                    />
-                  </div>
-
-                  {/* Heading */}
-                  <h3
-                    style={{
-                      fontFamily: "'Playfair Display', serif",
-                      fontSize: "clamp(24px, 4vw, 34px)",
-                      color: "#C9A84C",
-                      marginBottom: "14px",
-                      lineHeight: 1.2,
-                    }}
-                  >
-                    Crafted With Love
-                  </h3>
-
-                  {/* Description */}
-                  <p
-                    style={{
-                      fontSize: "clamp(14px, 2vw, 16px)",
-                      color: "rgba(253,250,244,0.68)",
-                      lineHeight: 1.8,
-                      marginBottom: "36px",
-                      maxWidth: "360px",
-                    }}
-                  >
-                    Every jewellery piece is handcrafted by our master artisans
-                    with decades of expertise and unmatched attention to detail.
-                  </p>
-
-                  {/* TRUST BADGES */}
-                  <div
-                    style={{
-                      display: "grid",
-                      gridTemplateColumns:
-                        window.innerWidth <= 480
-                          ? "1fr"
-                          : "repeat(2, 1fr)",
-                      gap: "14px",
-                      width: "100%",
-                    }}
-                  >
-                    {TRUST_BADGES.map(
-                      ({ icon: Icon, title, subtitle }) => (
-                        <div
-                          key={title}
-                          style={{
-                            padding: "18px 14px",
-                            border:
-                              "1px solid rgba(201,168,76,0.18)",
-                            borderRadius: "10px",
-                            textAlign: "center",
-                            background: "rgba(255,255,255,0.03)",
-                            backdropFilter: "blur(8px)",
-                            transition: "0.3s ease",
-                          }}
-                        >
-                          <div
-                            style={{
-                              display: "flex",
-                              justifyContent: "center",
-                              marginBottom: "10px",
-                            }}
-                          >
-                            <Icon
-                              size={22}
-                              color="#C9A84C"
-                              strokeWidth={1.8}
-                            />
-                          </div>
-
-                          <div
-                            style={{
-                              fontSize: "13px",
-                              color: "#C9A84C",
-                              fontWeight: 700,
-                              letterSpacing: "1px",
-                            }}
-                          >
-                            {title}
-                          </div>
-
-                          <div
-                            style={{
-                              fontSize: "11px",
-                              color: "rgba(253,250,244,0.55)",
-                              marginTop: "4px",
-                            }}
-                          >
-                            {subtitle}
-                          </div>
-                        </div>
-                      )
-                    )}
-                  </div>
-                </div>
               </div>
 
               {/* Decorative Border */}
@@ -223,9 +100,9 @@ function About({ onScrollTo }) {
                   left: "14px",
                   right: "-14px",
                   bottom: "-14px",
-                  border: "2px solid rgba(201,168,76,0.18)",
-                  borderRadius: "10px",
-                  zIndex: -1,
+                  border: "3px solid rgba(192, 150, 36, 0.96)",
+                  borderRadius: "15px",
+                  zIndex: 1,
                 }}
               />
             </div>
@@ -253,8 +130,8 @@ function About({ onScrollTo }) {
               }}
             >
               Since 1985, our journey began in the heart of Jaipur. Over three
-              generations, we’ve been crafting timeless jewellery that celebrates
-              life’s most precious moments.
+              generations, we’ve been crafting timeless jewellery that
+              celebrates life’s most precious moments.
             </p>
 
             <p
