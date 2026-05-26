@@ -1,7 +1,11 @@
 import { useInView } from "react-intersection-observer";
 import { SectionTitle } from "../components/UI.jsx";
-import { ShieldCheck, PenTool, Truck, RotateCcw, Sparkles } from "lucide-react";
-import img8 from "../../public/img8.jpg";
+import {
+  ShieldCheck,
+  PenTool,
+  Truck,
+  RotateCcw,
+} from "lucide-react";
 
 const FEATURES = [
   "BIS Certified Hallmarked Gold & Silver",
@@ -27,7 +31,7 @@ function About({ onScrollTo }) {
     <section
       id="about"
       style={{
-        padding: "clamp(60px, 8vw, 100px) 5%",
+        padding: "clamp(50px, 8vw, 100px) 5%",
         background: "#FDFAF4",
         overflow: "hidden",
       }}
@@ -36,14 +40,15 @@ function About({ onScrollTo }) {
         style={{
           maxWidth: "1200px",
           margin: "0 auto",
+          width: "100%",
         }}
       >
         <div
           ref={ref}
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-            gap: "clamp(40px, 6vw, 70px)",
+            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            gap: "clamp(30px, 5vw, 70px)",
             alignItems: "center",
           }}
         >
@@ -66,13 +71,13 @@ function About({ onScrollTo }) {
               <div
                 style={{
                   width: "100%",
-                  minHeight: "620px",
+                  minHeight: "auto",
                   background:
                     "linear-gradient(145deg, #0A1628 0%, #122040 100%)",
-                  borderRadius: "10px",
+                  borderRadius: "12px",
                   position: "relative",
                   overflow: "hidden",
-                  padding: "20px",
+                  padding: "clamp(12px, 2vw, 20px)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -86,6 +91,7 @@ function About({ onScrollTo }) {
                     width: "100%",
                     height: "100%",
                     maxHeight: "580px",
+                    aspectRatio: "4 / 5",
                     objectFit: "cover",
                     borderRadius: "10px",
                   }}
@@ -96,11 +102,11 @@ function About({ onScrollTo }) {
               <div
                 style={{
                   position: "absolute",
-                  top: "14px",
-                  left: "14px",
-                  right: "-14px",
-                  bottom: "-14px",
-                  border: "3px solid rgba(192, 150, 36, 0.96)",
+                  top: "12px",
+                  left: "12px",
+                  right: "-12px",
+                  bottom: "-12px",
+                  border: "2px solid rgba(192, 150, 36, 0.96)",
                   borderRadius: "15px",
                   zIndex: 1,
                 }}
@@ -123,10 +129,10 @@ function About({ onScrollTo }) {
             <p
               style={{
                 fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(17px, 2vw, 21px)",
+                fontSize: "clamp(16px, 2vw, 21px)",
                 color: "#444",
                 lineHeight: 1.9,
-                marginBottom: "22px",
+                marginBottom: "20px",
               }}
             >
               Since 1985, our journey began in the heart of Jaipur. Over three
@@ -137,10 +143,10 @@ function About({ onScrollTo }) {
             <p
               style={{
                 fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "clamp(17px, 2vw, 21px)",
+                fontSize: "clamp(16px, 2vw, 21px)",
                 color: "#666",
                 lineHeight: 1.9,
-                marginBottom: "40px",
+                marginBottom: "35px",
               }}
             >
               Every ornament tells a story — from bridal dreams to anniversary
@@ -153,8 +159,8 @@ function About({ onScrollTo }) {
               style={{
                 display: "flex",
                 flexDirection: "column",
-                gap: "16px",
-                marginBottom: "40px",
+                gap: "15px",
+                marginBottom: "35px",
               }}
             >
               {FEATURES.map((item) => (
@@ -163,7 +169,7 @@ function About({ onScrollTo }) {
                   style={{
                     display: "flex",
                     alignItems: "flex-start",
-                    gap: "14px",
+                    gap: "12px",
                   }}
                 >
                   <div
@@ -177,7 +183,7 @@ function About({ onScrollTo }) {
                   <span
                     style={{
                       color: "#333",
-                      fontSize: "clamp(14px, 2vw, 16px)",
+                      fontSize: "clamp(14px, 1.8vw, 16px)",
                       lineHeight: 1.7,
                     }}
                   >
@@ -185,6 +191,60 @@ function About({ onScrollTo }) {
                   </span>
                 </div>
               ))}
+            </div>
+
+            {/* TRUST BADGES */}
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns:
+                  "repeat(auto-fit, minmax(140px, 1fr))",
+                gap: "15px",
+                marginBottom: "35px",
+              }}
+            >
+              {TRUST_BADGES.map((badge, index) => {
+                const Icon = badge.icon;
+
+                return (
+                  <div
+                    key={index}
+                    style={{
+                      background: "#fff",
+                      padding: "16px",
+                      borderRadius: "10px",
+                      boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      textAlign: "center",
+                      gap: "8px",
+                    }}
+                  >
+                    <Icon size={24} color="#C09624" />
+
+                    <h4
+                      style={{
+                        margin: 0,
+                        fontSize: "14px",
+                        color: "#222",
+                      }}
+                    >
+                      {badge.title}
+                    </h4>
+
+                    <p
+                      style={{
+                        margin: 0,
+                        fontSize: "12px",
+                        color: "#666",
+                      }}
+                    >
+                      {badge.subtitle}
+                    </p>
+                  </div>
+                );
+              })}
             </div>
 
             {/* BUTTON */}
