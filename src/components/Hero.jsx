@@ -246,7 +246,7 @@ function Hero({ onScrollTo }) {
             style={{
               position: "relative",
               width: isMobile ? "260px" : "400px",
-              height: isMobile ? "320px" : "500px",
+              height: isMobile ? "420px" : "600px",
               flexShrink: 0,
             }}
           >
