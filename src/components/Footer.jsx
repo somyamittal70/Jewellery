@@ -55,12 +55,9 @@ function Footer({ onNavClick }) {
                   width: "44px",
                   height: "44px",
                   borderRadius: "50%",
-                  background: "rgba(201,168,76,0.12)",
-                  border: "1px solid rgba(201,168,76,0.35)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  boxShadow: "0 0 20px rgba(201,168,76,0.12)",
                   flexShrink: 0,
                   overflow: "hidden",
                 }}
@@ -80,10 +77,10 @@ function Footer({ onNavClick }) {
                 style={{
                   color: "#FDFAF4",
                   fontFamily: "'Playfair Display', serif",
-                  fontSize: "22px",
+                  fontSize: "19px",
                 }}
               >
-                NF Jewellery
+                New Fashion Jewellery
               </span>
             </div>
 

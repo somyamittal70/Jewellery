@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { Sparkles } from "lucide-react";
 
 const STATS = [
-  ["40+", "Years Legacy"],
-  ["50K+", "Happy Clients"],
+  ["15+", "Years Legacy"],
+  ["15K+", "Happy Clients"],
   ["5000+", "Designs"],
 ];
 
@@ -142,7 +142,7 @@ function Hero({ onScrollTo }) {
             <p
               style={{
                 fontFamily: "'Cormorant Garamond', serif",
-                fontSize: isMobile ? "17px" : "24px",
+                fontSize: isMobile ? "15px" : "24px",
                 color: "#ffffff",
                 lineHeight: 1.8,
                 marginBottom: "38px",
@@ -170,7 +170,7 @@ function Hero({ onScrollTo }) {
                 className="btn-gold"
                 style={{
                   padding: isMobile ? "13px 24px" : "16px 38px",
-                  fontSize: "12px",
+                  fontSize: "11px",
                   borderRadius: "4px",
                   width: isMobile ? "100%" : "auto",
                   maxWidth: isMobile ? "260px" : "unset",

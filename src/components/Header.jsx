@@ -46,18 +46,18 @@ function Header({ activeNav, onNavClick }) {
           left: 0,
           right: 0,
           zIndex: 1000,
-          background: scrolled ? "rgba(10,22,40,0.96)" : "rgba(10,22,40,0.35)",
+          background: scrolled ? "rgb(255, 255, 255)" : "rgb(249, 252, 255)",
           backdropFilter: "blur(14px)",
-          borderBottom: scrolled ? "1px solid rgba(201,168,76,0.15)" : "1px solid transparent",
+          borderBottom: scrolled ? "1px solid rgb(255, 255, 255)" : "1px solid transparent",
           transition: "all 0.35s ease",
-          padding: isMobile ? "0 18px" : "0 5%",
+          padding: isMobile ? "0 14px" : "0 5%",
         }}
       >
         <div
           style={{
             maxWidth: "1200px",
             margin: "0 auto",
-            height: isMobile ? "70px" : "84px",
+            height: isMobile ? "70px" : "60px",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
@@ -78,37 +78,36 @@ function Header({ activeNav, onNavClick }) {
               src="/logo.png"
               alt="Jewellery Logo"
               style={{
-                width: isMobile ? "40px" : "48px",
-                height: isMobile ? "40px" : "48px",
+                width: isMobile ? "48px" : "54px",
+                height: isMobile ? "48px" : "54px",
                 objectFit: "contain",
+                flexShrink: "0",
               }}
             />
 
-            <h2
-              style={{
-                color: "#FDFAF4",
-                fontFamily: "'Playfair Display', serif",
-                fontSize: isMobile ? "20px" : "28px",
-                margin: 0,
-                whiteSpace: "nowrap",
-              }}
+             <span
+              className={[
+                "text-[#0A1628] font-bold font-['Playfair_Display',serif] ",
+                isMobile ? "text-[18px]" : "text-[27px]",
+              ].join(" ")}
+              style={{ whiteSpace: "nowrap" }}
             >
-              NF Jewellers
-            </h2>
+              New Fashion Jewellers
+            </span>
           </div>
 
           {/* Desktop Nav */}
           {!isMobile && (
-            <nav style={{ display: "flex", alignItems: "center", gap: "30px" }}>
+            <nav style={{ display: "flex", alignItems: "center", gap: "30px", marginLeft: "8px" }}>
               {NAV_LINKS.map((link) => (
                 <span
                   key={link}
                   onClick={() => handleClick(link)}
                   className={`nav-link${activeNav === link ? " active" : ""}`}
                   style={{
-                    color: activeNav === link ? "#e41f59" : "rgba(253,250,244,0.85)",
+                    color: activeNav === link ? "#e41f59" : "#0A1628",
                     cursor: "pointer",
-                    fontSize: "13px",
+                    fontSize: "10px",
                     letterSpacing: "1.8px",
                     textTransform: "uppercase",
                     transition: "0.3s ease",
@@ -128,7 +127,7 @@ function Header({ activeNav, onNavClick }) {
                     whiteSpace: "nowrap",
                   }}
                 >
-                  Call Us!
+                  Call Us
                 </button>
               </a>
             </nav>
@@ -211,7 +210,7 @@ function Header({ activeNav, onNavClick }) {
                   borderRadius: "6px",
                 }}
               >
-                Call Us!
+                Call Us
               </button>
             </a>
           </div>
