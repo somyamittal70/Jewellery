@@ -83,7 +83,7 @@ function Footer({ onNavClick }) {
                   fontSize: "22px",
                 }}
               >
-                Jewellery
+                NF Jewellery
               </span>
             </div>
 
