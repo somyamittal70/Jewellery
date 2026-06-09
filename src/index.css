@@ -26,7 +26,7 @@ p {
 }
 
 ::selection {
-  background: #C9A84C;
+  background: #e41f59;
   color: #0A1628;
 }
 
@@ -73,7 +73,7 @@ p {
 
 /* ── Utility Classes ── */
 .gold-text {
-  background: linear-gradient(135deg, #C9A84C 0%, #F0D080 40%, #C9A84C 60%, #A07830 100%);
+  background: linear-gradient(135deg, #e41f59 0%, #e41f59 40%, #e41f59 60%, #e41f59 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -84,7 +84,7 @@ p {
 .decorative-diamond {
   width: 10px;
   height: 10px;
-  background: #C9A84C;
+  background: #e41f59;
   transform: rotate(45deg);
   display: inline-block;
 }
@@ -122,7 +122,7 @@ p {
 
 /* ── Reusable Button ── */
 .btn-gold {
-  background: linear-gradient(135deg, #A07830, #C9A84C, #F0D080, #C9A84C);
+  background: linear-gradient(135deg, #e41f59, #e41f59, #e41f59, #e41f59);
   background-size: 200% auto;
   color: #0A1628;
   border: none;
@@ -161,7 +161,7 @@ p {
   transform: translateX(-50%);
   width: 0;
   height: 1.5px;
-  background: #C9A84C;
+  background: #e41f59;
   transition: width 0.3s ease;
 }
 .nav-link:hover::after,
@@ -186,7 +186,7 @@ p {
 .filter-btn {
   cursor: pointer;
   transition: all 0.3s ease;
-  border: 1.5px solid #C9A84C;
+  border: 1.5px solid #e41f59;
   background: transparent;
   color: #0A1628;
   font-family: "Poppins", sans-serif;
@@ -197,7 +197,7 @@ p {
 }
 .filter-btn:hover,
 .filter-btn.active {
-  background: #C9A84C;
+  background: #e41f59;
   color: #0A1628;
   transform: translateY(-2px);
 }
@@ -227,6 +227,6 @@ p {
   color: rgba(253, 250, 244, 0.4);
 }
 .input-field:focus {
-  border-color: #C9A84C;
+  border-color: #e41f59;
   box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.15);
 }

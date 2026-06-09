@@ -84,7 +84,7 @@ function Contact() {
               right: `${5 + i * 8}%`,
               width: "40px",
               height: "40px",
-              border: "1px solid #C9A84C",
+              border: "1px solid #e41f59",
               transform: "rotate(45deg)",
               animation: `spin-slow ${10 + i * 3}s linear infinite`,
             }}
@@ -180,7 +180,7 @@ function Contact() {
                   >
                     <Icon
                       size={20}
-                      color="#C9A84C"
+                      color="#e41f59"
                       strokeWidth={1.8}
                     />
                   </div>
@@ -190,7 +190,7 @@ function Contact() {
                       style={{
                         fontSize: "11px",
                         letterSpacing: "2px",
-                        color: "#C9A84C",
+                        color: "#e41f59",
                         textTransform: "uppercase",
                         marginBottom: "5px",
                       }}
@@ -244,7 +244,7 @@ function Contact() {
                 <h3
                   style={{
                     fontFamily: "'Playfair Display', serif",
-                    color: "#C9A84C",
+                    color: "#e41f59",
                     fontSize: "clamp(20px, 4vw, 26px)",
                     marginBottom: "12px",
                   }}
@@ -374,7 +374,7 @@ export default Contact;
 const labelStyle = {
   fontSize: "11px",
   letterSpacing: "2px",
-  color: "#C9A84C",
+  color: "#e41f59",
   textTransform: "uppercase",
   display: "block",
   marginBottom: "8px",

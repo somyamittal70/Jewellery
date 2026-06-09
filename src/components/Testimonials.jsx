@@ -53,7 +53,7 @@ function Testimonials() {
               <div style={{
                 position: "absolute", top: 0, left: 0, right: 0,
                 height: "3px",
-                background: "linear-gradient(90deg, transparent, #C9A84C, transparent)",
+                background: "linear-gradient(90deg, transparent, #e41f59, transparent)",
               }} />
 
               {/* Opening quote mark */}
@@ -84,7 +84,7 @@ function Testimonials() {
                 <div style={{
                   width: "44px", height: "44px", flexShrink: 0,
                   borderRadius: "50%",
-                  background: "linear-gradient(135deg, #0A1628, #C9A84C)",
+                  background: "linear-gradient(135deg, #0A1628, #e41f59)",
                   display: "flex", alignItems: "center", justifyContent: "center",
                   fontWeight: 700, color: "#fff",
                   fontSize: "13px", fontFamily: "'Lato', sans-serif",
@@ -100,7 +100,7 @@ function Testimonials() {
                     {t.name}
                   </div>
                   <div style={{
-                    fontSize: "12px", color: "#C9A84C", letterSpacing: "1px",
+                    fontSize: "12px", color: "#e41f59", letterSpacing: "1px",
                   }}>
                     {t.city}
                   </div>
@@ -126,11 +126,11 @@ function Testimonials() {
           {TRUST_BADGES.map(({ icon: Icon, title, sub }) => (
             <div key={title} style={{ textAlign: "center" }}>
               <div style={{ display: "flex", justifyContent: "center", marginBottom: "10px" }}>
-                <Icon size={28} color="#C9A84C" strokeWidth={1.8} />
+                <Icon size={28} color="#e41f59" strokeWidth={1.8} />
               </div>
               <div style={{
                 fontFamily: "'Playfair Display', serif",
-                color: "#C9A84C",
+                color: "#e41f59",
                 fontSize: "clamp(13px, 2vw, 16px)",
                 marginBottom: "4px",
               }}>

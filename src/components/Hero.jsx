@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Gem, Diamond, Sparkles, CircleEllipsis } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 const STATS = [
   ["40+", "Years Legacy"],
@@ -10,18 +10,13 @@ const STATS = [
 function Hero({ onScrollTo }) {
   const [visible, setVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(() =>
-    typeof window !== "undefined" ? window.innerWidth <= 768 : false,
+    typeof window !== "undefined" ? window.innerWidth <= 768 : false
   );
 
   useEffect(() => {
     const t = setTimeout(() => setVisible(true), 100);
-
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
     window.addEventListener("resize", handleResize);
-
     return () => {
       clearTimeout(t);
       window.removeEventListener("resize", handleResize);
@@ -40,18 +35,15 @@ function Hero({ onScrollTo }) {
         justifyContent: "center",
         overflow: "hidden",
         boxSizing: "border-box",
-
-        /* BG IMAGE */
         backgroundImage: "url('./banner.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-
         padding: isMobile ? "110px 0 70px" : "90px 0 40px",
       }}
     >
 
-      {/* Radial Glow */}
+      {/* Radial Glow — #e41f59 instead of gold */}
       <div
         style={{
           position: "absolute",
@@ -61,7 +53,7 @@ function Hero({ onScrollTo }) {
           width: isMobile ? "300px" : "700px",
           height: isMobile ? "300px" : "700px",
           background:
-            "radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(228,31,89,0.12) 0%, transparent 70%)",
           pointerEvents: "none",
           zIndex: 2,
         }}
@@ -98,25 +90,24 @@ function Hero({ onScrollTo }) {
               minWidth: 0,
             }}
           >
-            {/* SMALL TAG */}
+            {/* SMALL TAG — border was gold, now #e41f59 */}
             <div
               style={{
                 display: "inline-flex",
                 alignItems: "center",
                 gap: "8px",
                 padding: isMobile ? "8px 14px" : "10px 18px",
-                border: "1px solid rgba(255,214,107,0.4)",
+                border: "1px solid rgba(228,31,89,0.4)",
                 background: "rgba(255,255,255,0.08)",
                 backdropFilter: "blur(6px)",
                 borderRadius: "50px",
                 marginBottom: "24px",
               }}
             >
-              <Sparkles size={16} color="#FFD66B" />
-
+              <Sparkles size={16} color="#e41f59" />
               <span
                 style={{
-                  color: "#FFD66B",
+                  color: "#e41f59",
                   fontSize: "11px",
                   letterSpacing: "2px",
                   textTransform: "uppercase",
@@ -144,13 +135,7 @@ function Hero({ onScrollTo }) {
             >
               Where Every Jewel
               <br />
-              <span
-                style={{
-                  color: "#FFD66B",
-                }}
-              >
-                Tells A Story
-              </span>
+              <span style={{ color: "#e41f59" }}>Tells A Story</span>
             </h1>
 
             {/* SUB TEXT */}
@@ -167,7 +152,7 @@ function Hero({ onScrollTo }) {
                 fontWeight: 500,
               }}
             >
-              Exquisite handcrafted jewellery that celebrates life’s most
+              Exquisite handcrafted jewellery that celebrates life's most
               precious moments. From bridal collections to timeless everyday
               elegance.
             </p>
@@ -195,14 +180,15 @@ function Hero({ onScrollTo }) {
                 Explore Collection
               </button>
 
+              {/* Outline button — border & color was gold, now #e41f59 (unchanged, already was #e41f59) */}
               <button
                 onClick={() => onScrollTo("About")}
                 style={{
                   padding: isMobile ? "13px 24px" : "16px 38px",
                   fontSize: "12px",
                   background: "rgba(0,0,0,0.35)",
-                  border: "1.5px solid #FFD66B",
-                  color: "#FFD66B",
+                  border: "1.5px solid #e41f59",
+                  color: "#e41f59",
                   backdropFilter: "blur(4px)",
                   cursor: "pointer",
                   letterSpacing: "2px",
@@ -219,7 +205,7 @@ function Hero({ onScrollTo }) {
               </button>
             </div>
 
-            {/* STATS */}
+            {/* STATS — border was white/gold, stat nums were gold, now #e41f59 */}
             <div
               style={{
                 display: "grid",
@@ -230,29 +216,26 @@ function Hero({ onScrollTo }) {
                 gap: isMobile ? "20px" : "50px",
                 marginTop: isMobile ? "42px" : "55px",
                 paddingTop: "28px",
-                borderTop: "1px solid rgba(255,255,255,0.18)",
+                borderTop: "1px solid rgba(228,31,89,0.25)",
               }}
             >
               {STATS.map(([num, label]) => (
                 <div
                   key={label}
-                  style={{
-                    textAlign: isMobile ? "center" : "left",
-                  }}
+                  style={{ textAlign: isMobile ? "center" : "left" }}
                 >
                   <div
                     style={{
                       fontFamily: "'Playfair Display', serif",
                       fontSize: isMobile ? "22px" : "36px",
                       fontWeight: 700,
-                      color: "#FFD66B",
+                      color: "#e41f59",
                       lineHeight: 1,
                       textShadow: "2px 2px 10px rgba(0,0,0,0.9)",
                     }}
                   >
                     {num}
                   </div>
-
                   <div
                     style={{
                       fontSize: isMobile ? "9px" : "10px",

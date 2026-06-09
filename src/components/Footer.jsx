@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { NAV_LINKS } from "../data/constants";
-import { Gem } from "lucide-react";
 
 const COLLECTIONS = [
   "Bridal Sets",
@@ -30,6 +29,7 @@ function Footer({ onNavClick }) {
       }}
     >
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+
         {/* Main Grid */}
         <div
           style={{
@@ -49,7 +49,7 @@ function Footer({ onNavClick }) {
                 marginBottom: "18px",
               }}
             >
-              {/* GEM LOGO */}
+              {/* LOGO IMAGE — replaces Gem icon */}
               <div
                 style={{
                   width: "44px",
@@ -62,12 +62,17 @@ function Footer({ onNavClick }) {
                   justifyContent: "center",
                   boxShadow: "0 0 20px rgba(201,168,76,0.12)",
                   flexShrink: 0,
+                  overflow: "hidden",
                 }}
               >
-                <Gem
-                  size={22}
-                  color="#C9A84C"
-                  strokeWidth={1.8}
+                <img
+                  src="/logo.png"
+                  alt="Logo"
+                  style={{
+                    width: "28px",
+                    height: "28px",
+                    objectFit: "contain",
+                  }}
                 />
               </div>
 
@@ -90,7 +95,7 @@ function Footer({ onNavClick }) {
                 marginBottom: "0",
               }}
             >
-              Crafting timeless jewellery since 1985. Every piece is a
+              Crafting timeless jewellery since 2004. Every piece is a
               masterpiece of tradition, elegance, and artistry.
             </p>
           </div>
@@ -98,14 +103,7 @@ function Footer({ onNavClick }) {
           {/* Quick Links */}
           <div>
             <h4 style={colHeadingStyle}>Quick Links</h4>
-
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "10px",
-              }}
-            >
+            <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
               {NAV_LINKS.map((l) => (
                 <span
                   key={l}
@@ -126,14 +124,7 @@ function Footer({ onNavClick }) {
           {/* Collections */}
           <div>
             <h4 style={colHeadingStyle}>Collections</h4>
-
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "10px",
-              }}
-            >
+            <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
               {COLLECTIONS.map((c) => (
                 <span
                   key={c}
@@ -152,7 +143,6 @@ function Footer({ onNavClick }) {
           {/* Newsletter */}
           <div>
             <h4 style={colHeadingStyle}>Newsletter</h4>
-
             <p
               style={{
                 color: "rgba(253,250,244,0.45)",
@@ -161,24 +151,16 @@ function Footer({ onNavClick }) {
                 lineHeight: 1.7,
               }}
             >
-              Subscribe for new collections, jewellery trends, and exclusive
-              offers.
+              Subscribe for new collections, jewellery trends, and exclusive offers.
             </p>
 
-            <div
-              style={{
-                display: "flex",
-                width: "100%",
-              }}
-            >
+            <div style={{ display: "flex", width: "100%" }}>
               <input
                 type="email"
                 placeholder="Your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                onKeyDown={(e) =>
-                  e.key === "Enter" && handleSubscribe()
-                }
+                onKeyDown={(e) => e.key === "Enter" && handleSubscribe()}
                 style={{
                   flex: 1,
                   minWidth: 0,
@@ -192,7 +174,6 @@ function Footer({ onNavClick }) {
                   borderRadius: "6px 0 0 6px",
                 }}
               />
-
               <button
                 className="btn-gold"
                 onClick={handleSubscribe}
@@ -222,50 +203,19 @@ function Footer({ onNavClick }) {
             gap: "10px",
           }}
         >
-          <p
-            style={{
-              color: "rgba(253,250,244,0.3)",
-              fontSize: "clamp(11px, 2vw, 13px)",
-              margin: 0,
-            }}
-          >
+          <p style={{ color: "rgba(253,250,244,0.3)", fontSize: "clamp(11px, 2vw, 13px)", margin: 0 }}>
             © 2025 Jewellers. All rights reserved.
           </p>
 
-          <div
-            style={{
-              display: "flex",
-              gap: "8px",
-              alignItems: "center",
-              flexWrap: "wrap",
-            }}
-          >
-            <div
-              className="decorative-diamond"
-              style={{
-                width: "6px",
-                height: "6px",
-              }}
-            />
-
-            <span
-              style={{
-                color: "rgba(253,250,244,0.3)",
-                fontSize: "clamp(11px, 2vw, 13px)",
-              }}
-            >
-              Made with ♥ for timeless beauty
+          <div style={{ display: "flex", gap: "8px", alignItems: "center", flexWrap: "wrap" }}>
+            <div className="decorative-diamond" style={{ width: "6px", height: "6px" }} />
+            <span style={{ color: "rgba(253,250,244,0.3)", fontSize: "clamp(11px, 2vw, 13px)" }}>
+              Developed By Debox Technology
             </span>
-
-            <div
-              className="decorative-diamond"
-              style={{
-                width: "6px",
-                height: "6px",
-              }}
-            />
+            <div className="decorative-diamond" style={{ width: "6px", height: "6px" }} />
           </div>
         </div>
+
       </div>
     </footer>
   );
@@ -276,7 +226,7 @@ export default Footer;
 const colHeadingStyle = {
   fontFamily: "'Cormorant Garamond', serif",
   fontSize: "clamp(13px, 2vw, 16px)",
-  color: "#C9A84C",
+  color: "#e41f59",
   letterSpacing: "2px",
   textTransform: "uppercase",
   marginBottom: "16px",

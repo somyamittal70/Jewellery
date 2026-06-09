@@ -121,7 +121,7 @@ function Gallery() {
                   style={{
                     fontSize: "10px",
                     letterSpacing: "3px",
-                    color: "#C9A84C",
+                    color: "#e41f59",
                     textTransform: "uppercase",
                     marginBottom: "8px",
                   }}

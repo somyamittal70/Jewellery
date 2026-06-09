@@ -7,7 +7,7 @@ export function SectionTitle({ title, subtitle, light = false }) {
           fontSize: "clamp(10px, 2.5vw, 13px)",
           letterSpacing: "clamp(2px, 1vw, 4px)",
           textTransform: "uppercase",
-          color: "#C9A84C",
+          color: "#e41f59",
           marginBottom: "10px",
           fontWeight: 500,
           wordBreak: "break-word",
@@ -37,7 +37,7 @@ export function SectionTitle({ title, subtitle, light = false }) {
           margin: "16px auto 0",
           width: "clamp(50px, 15vw, 80px)",
           height: "2px",
-          background: "linear-gradient(90deg, transparent, #C9A84C, transparent)",
+          background: "linear-gradient(90deg, transparent, #e41f59, transparent)",
         }}
       />
     </div>
@@ -56,7 +56,7 @@ export function StarRating({ count }) {
         <span
           key={i}
           style={{
-            color: "#C9A84C",
+            color: "#e41f59",
             fontSize: "clamp(14px, 4vw, 18px)",
             lineHeight: 1,
           }}

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Gem } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "../data/constants";
 
 function Header({ activeNav, onNavClick }) {
@@ -15,10 +15,7 @@ function Header({ activeNav, onNavClick }) {
     const onResize = () => {
       const mobile = window.innerWidth <= 768;
       setIsMobile(mobile);
-
-      if (!mobile) {
-        setMenuOpen(false);
-      }
+      if (!mobile) setMenuOpen(false);
     };
 
     window.addEventListener("scroll", onScroll);
@@ -32,10 +29,7 @@ function Header({ activeNav, onNavClick }) {
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
-
-    return () => {
-      document.body.style.overflow = "";
-    };
+    return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
 
   const handleClick = (link) => {
@@ -52,13 +46,9 @@ function Header({ activeNav, onNavClick }) {
           left: 0,
           right: 0,
           zIndex: 1000,
-          background: scrolled
-            ? "rgba(10,22,40,0.96)"
-            : "rgba(10,22,40,0.35)",
+          background: scrolled ? "rgba(10,22,40,0.96)" : "rgba(10,22,40,0.35)",
           backdropFilter: "blur(14px)",
-          borderBottom: scrolled
-            ? "1px solid rgba(201,168,76,0.15)"
-            : "1px solid transparent",
+          borderBottom: scrolled ? "1px solid rgba(201,168,76,0.15)" : "1px solid transparent",
           transition: "all 0.35s ease",
           padding: isMobile ? "0 18px" : "0 5%",
         }}
@@ -84,26 +74,15 @@ function Header({ activeNav, onNavClick }) {
               flexShrink: 0,
             }}
           >
-            <div
+            <img
+              src="/logo.png"
+              alt="Jewellery Logo"
               style={{
                 width: isMobile ? "40px" : "48px",
                 height: isMobile ? "40px" : "48px",
-                borderRadius: "50%",
-                background: "rgba(201,168,76,0.12)",
-                border: "1px solid rgba(201,168,76,0.35)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                boxShadow: "0 0 20px rgba(201,168,76,0.15)",
-                flexShrink: 0,
+                objectFit: "contain",
               }}
-            >
-              <Gem
-                size={isMobile ? 20 : 26}
-                color="#C9A84C"
-                strokeWidth={1.8}
-              />
-            </div>
+            />
 
             <h2
               style={{
@@ -114,31 +93,20 @@ function Header({ activeNav, onNavClick }) {
                 whiteSpace: "nowrap",
               }}
             >
-              Jewellery
+              NF Jewellers
             </h2>
           </div>
 
           {/* Desktop Nav */}
           {!isMobile && (
-            <nav
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "30px",
-              }}
-            >
+            <nav style={{ display: "flex", alignItems: "center", gap: "30px" }}>
               {NAV_LINKS.map((link) => (
                 <span
                   key={link}
                   onClick={() => handleClick(link)}
-                  className={`nav-link${
-                    activeNav === link ? " active" : ""
-                  }`}
+                  className={`nav-link${activeNav === link ? " active" : ""}`}
                   style={{
-                    color:
-                      activeNav === link
-                        ? "#C9A84C"
-                        : "rgba(253,250,244,0.85)",
+                    color: activeNav === link ? "#e41f59" : "rgba(253,250,244,0.85)",
                     cursor: "pointer",
                     fontSize: "13px",
                     letterSpacing: "1.8px",
@@ -174,7 +142,7 @@ function Header({ activeNav, onNavClick }) {
               style={{
                 background: "transparent",
                 border: "none",
-                color: "#C9A84C",
+                color: "#e41f59",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -202,32 +170,21 @@ function Header({ activeNav, onNavClick }) {
             height: "calc(100vh - 70px)",
             background: "rgba(10,22,40,0.98)",
             backdropFilter: "blur(14px)",
-            transform: menuOpen
-              ? "translateX(0)"
-              : "translateX(-100%)",
+            transform: menuOpen ? "translateX(0)" : "translateX(-100%)",
             transition: "transform 0.35s ease",
             zIndex: 999,
             padding: "30px 24px",
             overflowY: "auto",
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "8px",
-            }}
-          >
+          <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
             {NAV_LINKS.map((link) => (
               <div
                 key={link}
                 onClick={() => handleClick(link)}
                 style={{
                   padding: "16px 0",
-                  color:
-                    activeNav === link
-                      ? "#C9A84C"
-                      : "rgba(253,250,244,0.9)",
+                  color: activeNav === link ? "#e41f59" : "rgba(253,250,244,0.9)",
                   fontSize: "15px",
                   letterSpacing: "2px",
                   textTransform: "uppercase",
@@ -243,10 +200,7 @@ function Header({ activeNav, onNavClick }) {
               </div>
             ))}
 
-            <a
-              href="tel:+919871655831"
-              style={{ textDecoration: "none" }}
-            >
+            <a href="tel:+919871655831" style={{ textDecoration: "none" }}>
               <button
                 className="btn-gold"
                 style={{

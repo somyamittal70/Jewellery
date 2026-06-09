@@ -18,7 +18,6 @@ const TRUST_BADGES = [
   { icon: ShieldCheck, title: "BIS Hallmark", subtitle: "Certified Gold" },
   { icon: PenTool, title: "Custom Design", subtitle: "Available" },
   { icon: Truck, title: "Free Delivery", subtitle: "Pan India" },
-  { icon: RotateCcw, title: "30 Day", subtitle: "Easy Return" },
 ];
 
 function About({ onScrollTo }) {
@@ -106,7 +105,7 @@ function About({ onScrollTo }) {
                   left: "12px",
                   right: "-12px",
                   bottom: "-12px",
-                  border: "2px solid rgba(192, 150, 36, 0.96)",
+                  border: "2px solid #e41f59",
                   borderRadius: "15px",
                   zIndex: 1,
                 }}
@@ -221,7 +220,7 @@ function About({ onScrollTo }) {
                       gap: "8px",
                     }}
                   >
-                    <Icon size={24} color="#C09624" />
+                    <Icon size={24} color="#e41f59" />
 
                     <h4
                       style={{
